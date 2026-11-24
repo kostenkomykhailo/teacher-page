@@ -254,3 +254,84 @@ tbody tr:hover { background: #f8f9fb; }
   .nav-list { justify-content: center; }
   .nav-list a { padding: 10px 8px; font-size: 14px; }
 }
+
+/* ===== ЛР5: обхід DOM-дерева ===== */
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid var(--accent);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-outline:hover { background: var(--accent); color: var(--navy); }
+
+/* підсвічування поточного вузла */
+.dom-highlight {
+  outline: 3px solid var(--accent) !important;
+  outline-offset: 3px;
+  background-color: rgba(227, 167, 47, 0.12) !important;
+  transition: outline-color 0.2s;
+}
+
+/* вікно-повідомлення */
+.dom-dialog {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: min(380px, calc(100% - 32px));
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 16px 40px rgba(22, 50, 79, 0.28);
+  border-top: 5px solid var(--accent);
+  padding: 20px 22px;
+  z-index: 100;
+  animation: dialogIn 0.25s ease;
+}
+
+.dom-dialog[hidden] { display: none; }
+
+@keyframes dialogIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dom-dialog h3 { color: var(--navy); font-size: 18px; margin-bottom: 4px; }
+
+.dom-dialog .dom-progress { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
+
+.dom-dialog .dom-info { font-size: 14px; margin-bottom: 6px; word-break: break-word; }
+
+.dom-dialog .dom-info b { color: var(--navy); }
+
+.dom-dialog .dom-path {
+  font-family: Consolas, monospace;
+  font-size: 12px;
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 6px 8px;
+  margin: 8px 0 10px;
+  word-break: break-all;
+}
+
+.dom-dialog .dom-question { font-weight: 600; margin-bottom: 12px; }
+
+.dom-dialog .dom-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.dom-dialog button {
+  font: inherit;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--navy);
+}
+
+.dom-dialog button.primary { background: var(--navy); color: #fff; }
+.dom-dialog button.danger { background: #fde2e1; color: #a12622; }
+.dom-dialog button:hover { filter: brightness(0.93); }

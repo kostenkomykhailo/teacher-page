@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="hero">
@@ -19,7 +20,10 @@
         <h1>Петренко Олександр Васильович</h1>
         <p class="hero-position">Кандидат технічних наук, доцент кафедри комп'ютерних наук</p>
         <p class="hero-org">Університет митної справи та фінансів · Факультет інноваційних технологій</p>
-        <a class="btn" href="#contacts">Зв'язатися</a>
+        <div class="hero-actions">
+          <a class="btn" href="#contacts">Зв'язатися</a>
+          <button class="btn btn-outline" id="domTourBtn" type="button">Обхід DOM-дерева</button>
+        </div>
       </div>
     </div>
   </header>
